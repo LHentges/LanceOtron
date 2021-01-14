@@ -1,0 +1,54 @@
+ChIP-seq_CTCF_spleen
+
+0-LanceOtron
+--------------------------------------------------
+- true positives: 53
+- false negatives: 2
+- true negatives: 63
+- false positives: 4
+
+- precision: 0.9298245614035088
+- recall/sensitivity: 0.9636363636363636
+- specificity: 0.9402985074626866
+- F1 score: 0.9464285714285714
+
+
+1-MACS2
+--------------------------------------------------
+- true positives: 55
+- false negatives: 0
+- true negatives: 52
+- false positives: 15
+
+- precision: 0.7857142857142857
+- recall/sensitivity: 1.0
+- specificity: 0.7761194029850746
+- F1 score: 0.88
+
+
+2-LanceOtron-with-input
+--------------------------------------------------
+- true positives: 53
+- false negatives: 2
+- true negatives: 67
+- false positives: 0
+
+- precision: 1.0
+- recall/sensitivity: 0.9636363636363636
+- specificity: 1.0
+- F1 score: 0.9814814814814815
+
+
+3-MACS2-with-input
+--------------------------------------------------
+- true positives: 53
+- false negatives: 2
+- true negatives: 66
+- false positives: 1
+
+- precision: 0.9814814814814815
+- recall/sensitivity: 0.9636363636363636
+- specificity: 0.9850746268656716
+- F1 score: 0.9724770642201835
+
+

@@ -1,0 +1,28 @@
+ChIP-seq_H3K4me3_K562
+
+0-LanceOtron
+--------------------------------------------------
+- true positives: 69
+- false negatives: 1
+- true negatives: 51
+- false positives: 15
+
+- precision: 0.8214285714285714
+- recall/sensitivity: 0.9857142857142858
+- specificity: 0.7727272727272727
+- F1 score: 0.8961038961038961
+
+
+1-MACS2
+--------------------------------------------------
+- true positives: 70
+- false negatives: 0
+- true negatives: 43
+- false positives: 23
+
+- precision: 0.7526881720430108
+- recall/sensitivity: 1.0
+- specificity: 0.6515151515151515
+- F1 score: 0.8588957055214724
+
+

@@ -1,0 +1,28 @@
+ATAC-seq_open-chromatin_MCF7
+
+0-LanceOtron
+--------------------------------------------------
+- true positives: 98
+- false negatives: 3
+- true negatives: 95
+- false positives: 0
+
+- precision: 1.0
+- recall/sensitivity: 0.9702970297029703
+- specificity: 1.0
+- F1 score: 0.9849246231155779
+
+
+1-MACS2
+--------------------------------------------------
+- true positives: 98
+- false negatives: 3
+- true negatives: 78
+- false positives: 17
+
+- precision: 0.8521739130434782
+- recall/sensitivity: 0.9702970297029703
+- specificity: 0.8210526315789474
+- F1 score: 0.9074074074074074
+
+
