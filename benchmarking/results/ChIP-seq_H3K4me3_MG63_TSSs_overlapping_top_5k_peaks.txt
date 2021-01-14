@@ -1,0 +1,22 @@
+ChIP-seq_H3K4me3_MG63
+
+0-LanceOtron-top-5k-peaks
+--------------------------------------------------
+TSSs overlapping top 5k peaks: 12885
+
+
+1-MACS2-top-5k-peaks
+--------------------------------------------------
+TSSs overlapping top 5k peaks: 11201
+
+
+2-LanceOtron-with-input-top-5k-peaks
+--------------------------------------------------
+TSSs overlapping top 5k peaks: 13054
+
+
+3-MACS2-with-input-top-5k-peaks
+--------------------------------------------------
+TSSs overlapping top 5k peaks: 8140
+
+
