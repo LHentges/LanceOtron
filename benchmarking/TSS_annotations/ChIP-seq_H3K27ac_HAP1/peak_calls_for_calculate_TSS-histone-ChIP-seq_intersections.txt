@@ -1,0 +1,4 @@
+0-LanceOtron_ChIP-seq_H3K27ac_HAP1_top-5k-peaks-normalised_to_1kb.bed
+1-MACS2_ChIP-seq_H3K27ac_HAP1_top-5k-peaks-normalised_to_1kb.bed
+2-LanceOtron-with-input_ChIP-seq_H3K27ac_HAP1_top-5k-peaks-normalised_to_1kb.bed
+3-MACS2-with-input_ChIP-seq_H3K27ac_HAP1_top-5k-peaks-normalised_to_1kb.bed 

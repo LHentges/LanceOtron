@@ -9,6 +9,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 sample_folder = './labelled_datasets/'
+peak_calls_folder = './peak_calls/'
+peak_calls_file = 'peak_calls_for_measure_model_performance_on_labelled_datasets.txt'
 out_folder = './results/'
 plt.style.use('seaborn')
 
@@ -16,29 +18,21 @@ sample_list = []
 for sample in os.listdir(sample_folder):
     sample_list.append(sample)
 
-sample_file_dict = {}
+sample_peak_calls_dict = {}
 for sample in sample_list:
-    peak_call_file_list = []
-    for file in os.listdir(sample_folder+sample):
-        if file.startswith('peaks'):
-            labelled_peaks_bed_file = sample_folder+sample+'/'+file
-        elif file.startswith('noise'):
-            labelled_peaks_noise_file = sample_folder+sample+'/'+file
-        else:
-            peak_call_file_list.append(sample_folder+sample+'/'+file)
-    sample_file_dict[sample] = {'labelled_peaks_bed_file':labelled_peaks_bed_file, 'labelled_noise_bed_file':labelled_peaks_noise_file, 'peak_call_file_list':peak_call_file_list}
-
-for sample in sorted(sample_file_dict):
-    labelled_peaks_pybedtools = pybedtools.BedTool(sample_file_dict[sample]['labelled_peaks_bed_file'])
-    labelled_noise_pybedtools = pybedtools.BedTool(sample_file_dict[sample]['labelled_noise_bed_file'])
-    model_list = []
-    precision_list = []
-    recall_list = []
-    specificity_list = []
+    peak_call_list = []
+    with open(sample_folder+sample+'/'+peak_calls_file) as f:
+        for peak_call in f:
+            peak_call_list.append(peak_calls_folder+peak_call.strip())
+    sample_peak_calls_dict[sample] = peak_call_list
+    
+for sample in sample_list:
+    labelled_peaks_pybedtools = pybedtools.BedTool(sample_folder+sample+'/peaks_'+sample+'.bed')
+    labelled_noise_pybedtools = pybedtools.BedTool(sample_folder+sample+'/noise_'+sample+'.bed')
     results_dict = {}
     with open(out_folder+sample+'_model_performance_benchmarks.txt', 'w') as f:
         f.write(sample+'\n\n')
-    for peak_call in sorted(sample_file_dict[sample]['peak_call_file_list']):
+    for peak_call in sorted(sample_peak_calls_dict[sample]):
         peak_call_pybedtools = pybedtools.BedTool(peak_call)
         true_positive_regions = labelled_peaks_pybedtools.intersect(peak_call_pybedtools, u=True, wa=True)
         false_negative_regions = labelled_peaks_pybedtools.intersect(peak_call_pybedtools, v=True, wa=True)
@@ -67,4 +61,4 @@ for sample in sorted(sample_file_dict):
     results_df.plot.bar()
     plt.title(sample, color='black')
     plt.legend(loc='center left', bbox_to_anchor=(1.0, 0.5))
-    plt.savefig(out_folder+sample+'.png', bbox_inches='tight')
+    plt.savefig(out_folder+sample+'_model_performance_benchmarks.png', bbox_inches='tight')
