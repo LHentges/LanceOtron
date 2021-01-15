@@ -26,26 +26,26 @@ def bed_file_to_list(bed_file, header=False):
     return bed_list
 
 
-# sorting on column 4 for LanceOtron, overall peak score, and column 9 for MACS2, q-value
+# sorting on fourth column for LanceOtron, overall peak score, and ninth column for MACS2, q-value
 
 for sample in sample_list:
     for peakcaller_type in peakcaller_type_list:
         bed_file = '../labelled_datasets/'+sample+'/'+peakcaller_type+'_'+sample
         if peakcaller_type.startswith('0') or peakcaller_type.startswith('2'):
+            sort_column = 3
             bed_file+='.bed'
-            bed_list = bed_file_to_list(bed_file)
-            bed_list.sort(key=lambda x: x[3], reverse=True)
         elif peakcaller_type.startswith('1') or peakcaller_type.startswith('3'):
+            sort_column = 8
             bed_file+='.narrowPeak'
-            bed_list = bed_file_to_list(bed_file)
-            bed_list.sort(key=lambda x: x[8], reverse=True)
+        bed_list = bed_file_to_list(bed_file)
+        bed_list.sort(key=lambda x: x[sort_column], reverse=True)
         bed_list_centered = []
         top_peaks_count = 0
         for bed_entry in bed_list:
-            if bed_entry[0]!='chrM':
+            if bed_entry[0]!='chrM' and not bed_entry[0].startswith('chrUn'):
                 region_size = bed_entry[2]-bed_entry[1]
                 mid = int((region_size)/2)+bed_entry[1]
-                bed_list_centered.append([bed_entry[0], mid-500, mid+500, bed_entry[4]])
+                bed_list_centered.append([bed_entry[0], mid-500, mid+500, bed_entry[sort_column]])
                 top_peaks_count+=1
             if top_peaks_count==5000:
                 break
