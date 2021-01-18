@@ -12,11 +12,13 @@ from sklearn.preprocessing import StandardScaler
 import tensorflow as tf
 from tensorflow import keras
 import tensorflow.keras.backend as K
+from scipy.stats import poisson
 import csv
 import argparse
 
 parser = argparse.ArgumentParser(description='Sort significantly enriched regions of ChIP-seq singnals using a CNN')
 parser.add_argument('file', help='bigwig file')
+parser.add_argument('-i', '--input', type=str, help='control input track used to calculate Poisson-based significance of peaks')
 parser.add_argument('-t', '--threshold', type=float, default=4, help='initial threshold used for selecting candidate peaks; default=4')
 parser.add_argument('-w', '--window', type=int, default=400, help='window size for rolling mean to use for selecting candidate peaks; default=400')
 parser.add_argument('-f', '--folder', type=str, default='./', help='folder to write results to; default=current directory')
@@ -25,6 +27,7 @@ parser.add_argument('--skipheader', default=False, action='store_true', help='sk
 args = parser.parse_args()
 
 bigwig_file = args.file
+control_file = args.input
 out_folder = args.folder
 initial_threshold = args.threshold
 window = args.window
@@ -104,6 +107,16 @@ def build_model():
     model.load_weights('./wide_and_deep_fully_trained_v5_03.h5')
     return model
 
+def calculate_pvalue_from_input(chrom, start, end, seq_depth_test, seq_depth_control, pyBigWig_object, max_height):
+    ave_coverage_input = pyBigWig_object.stats(chrom, start, end, type='mean', exact=True)[0]*(seq_depth_test/seq_depth_control)
+    with np.errstate(divide='ignore'):
+        pvalue = -1*np.log10(1-poisson.cdf(max_height, ave_coverage_input))
+    if np.isinf(pvalue):
+        pvalue = 100.
+    if pvalue>100:
+        pvalue = 100.
+    return pvalue
+
 pyBigWig_object = pyBigWig.open(bigwig_file)
 read_coverage_total = pyBigWig_object.header()['sumData']
 read_coverage_rphm = read_coverage_total/read_coverage_factor
@@ -131,17 +144,23 @@ for chrom in genome_stats_dict:
         X_deep_array_norm = np.expand_dims(X_deep_array_norm, axis=2)
         model = build_model()
         model_classifications = model.predict([X_deep_array_norm, X_wide_array_norm], verbose=1)
+        pyBigWig_input = pyBigWig.open(control_file)
+        read_coverage_total_input = pyBigWig_input.header()['sumData']
+        read_coverage_rphm_input = read_coverage_total_input/read_coverage_factor
         K.clear_session()
         for i, coord_pair in enumerate(enriched_region_coord_list):
-            out_list = [chrom, coord_pair[0], coord_pair[1], model_classifications[0][i][0], model_classifications[1][i][0], model_classifications[2][i][0]]
+            average_cov = coverage_array[coord_pair[0]:coord_pair[1]].mean()*read_coverage_rphm
+            pvalue_input = calculate_pvalue_from_input(chrom, coord_pair[0], coord_pair[1], read_coverage_total, read_coverage_total_input, pyBigWig_input, average_cov)
+            out_list = [chrom, coord_pair[0], coord_pair[1], model_classifications[0][i][0], model_classifications[1][i][0], model_classifications[2][i][0], pvalue_input]
             X_wide_list = X_wide_array[i][:-1].tolist()
             X_wide_list = [100. if x>10 else x for x in X_wide_list]
             out_list+=X_wide_list
             chrom_file_out.append(out_list)
+        pyBigWig_input.close()
         bed_file_out+=chrom_file_out
 
 with open(out_folder+out_file_name, 'w', newline='') as f:
     if not skip_header:
-        f.write('chrom\tstart\tend\toverall_peak_score\tshape_score\tenrichment_score\tpvalue_chrom\tpvalue_10kb\tpvalue_20kb\tpvalue_30kb\tpvalue_40kb\tpvalue_50kb\tpvalue_60kb\tpvalue_70kb\tpvalue_80kb\tpvalue_90kb\tpvalue_100kb\n')
+        f.write('chrom\tstart\tend\toverall_peak_score\tshape_score\tenrichment_score\tpvalue_input\tpvalue_chrom\tpvalue_10kb\tpvalue_20kb\tpvalue_30kb\tpvalue_40kb\tpvalue_50kb\tpvalue_60kb\tpvalue_70kb\tpvalue_80kb\tpvalue_90kb\tpvalue_100kb\n')
     bed_writer = csv.writer(f, delimiter='\t')
     bed_writer.writerows(bed_file_out)
