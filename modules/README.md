@@ -1,6 +1,6 @@
 ## Modules
 
-The 3 main modules, **Score Peaks**, **Find and Score Peaks**, and **Find and Score Peaks with Input**, are found here, along with the LanceOtron.py script of classes and functions used, model weights for the neural network, and coefficients for the standard scaler normilisation.
+The 3 main modules, **Score Peaks**, **Find and Score Peaks**, and **Find and Score Peaks with Input**, are found here, along with the LanceOtron.py script of classes and functions used, model weights for the neural network, and coefficients for the standard scaler normalisation.
 
 ### TensorFlow versions
 
