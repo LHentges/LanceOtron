@@ -1,0 +1,9 @@
+matplotlib==3.3.3
+pybedtools==0.8.1
+scipy==1.5.4
+pandas==1.2.1
+numpy==1.19.5
+seaborn==0.10.1
+pyBigWig==0.3.17
+scikit_learn==0.24.1
+tensorflow==2.4.1
