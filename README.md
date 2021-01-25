@@ -11,14 +11,14 @@ LanceOtron is a machine learning, genomic data extraction and analysis tool trai
 LanceOtron uses Python 3 (3.8.3) and TensorFlow 2. The models have been saved such that a TensorFlow 1 setup could be used making only minor amendments to the scripts. Additional packages were used for benchmarking LanceOtron (N.B. [bedtools](https://github.com/arq5x/bedtools2) needs to be installed to use the python implementation). See [requirements.txt](requirements.txt) for specific versions used. 
 
 **Required Python Packages for LanceOtron:**
-> scipy
-> numpy
-> pyBigWig
-> scikit\_learn==0.24.1
-> tensorflow==2.X.X
+> * scipy
+> * numpy
+> * pyBigWig
+> * scikit\_learn==0.24.1
+> * tensorflow==2.X.X
 
 **Additional Python Packages for Benchmarking:**
-> pandas
-> matplotlib
-> pybedtools
-> seaborn
+> * pandas
+> * matplotlib
+> * pybedtools
+> * seaborn
