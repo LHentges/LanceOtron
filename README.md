@@ -22,3 +22,9 @@ LanceOtron uses Python 3 (3.8.3) and TensorFlow 2. The models have been saved su
 > * matplotlib
 > * pybedtools
 > * seaborn
+
+## Citation
+
+Please see our [bioRxiv article](https://www.biorxiv.org/content/10.1101/2021.01.25.428108v1) for further details on this project.
+
+Hentges, L. D., Sergeant, M. J., Downes, D. J., Hughes, J. R., & Taylor, S. (2021). LanceOtron : a deep learning peak caller for ATAC-seq , ChIP-seq , and DNase-seq. *bioRxiv*. https://www.biorxiv.org/content/10.1101/2021.01.25.428108v1
