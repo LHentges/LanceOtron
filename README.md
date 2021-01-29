@@ -14,7 +14,7 @@ LanceOtron uses Python 3 (3.8.3) and TensorFlow 2. The models have been saved su
 > * scipy
 > * numpy
 > * pyBigWig
-> * scikit\_learn==0.24.1
+> * scikit\_learn==0.23.1
 > * tensorflow==2.X.X
 
 **Additional Python Packages for Benchmarking:**
@@ -22,6 +22,14 @@ LanceOtron uses Python 3 (3.8.3) and TensorFlow 2. The models have been saved su
 > * matplotlib
 > * pybedtools
 > * seaborn
+
+## CLI install
+
+We recommend using a fresh virtual environment with Python 3.7+, and installing the required packages with pip.
+
+1. Clone/download repository
+1. pip install requirements
+> `pip install -r /path/to/repo/LanceOtron-master/requirements.txt`
 
 ## Citation
 
