@@ -33,13 +33,17 @@ We recommend using a fresh virtual environment with Python 3.7+ (older versions 
 
 ## Usage
 
-Currently there are 3 LanceOtron modules available, all of which require a bigwig file to supply the model with coverage data. 
+Currently there are 3 LanceOtron modules available, all of which require a bigwig file to supply the model with coverage data. We recommend directly converting BAM files to bigwigs with [deepTools](https://github.com/deeptools/deepTools/tree/develop) using the command `bamCoverage --bam filename.bam.sorted -o filename.bw --extendReads -bs 1 --normalizeUsing RPKM`.
 
 Module | Operation | Files Used
 ------ | --------- | ----------
 Find and Score Peaks | Find enriched regions from coverage track, score regions with neural network | bigwig file
 Find and Score Peaks with Input | Find enriched regions from coverage track, score regions with neural network, calculate pvalues for enrichment over control | experimental bigwig file, input (control) bigwig file
 Score Peaks | Score user-supplied regions with neural network | bed file, bigwig file
+
+### Find and Score Peaks
+
+
 
 ## Citation
 
