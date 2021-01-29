@@ -33,7 +33,7 @@ We recommend using a fresh virtual environment with Python 3.7+ (older versions 
 
 ## Usage
 
-Currently there are 3 LanceOtron modules available, all of which require a bigwig file to supply the model with coverage data. We recommend directly converting BAM files to bigwigs with [deepTools](https://github.com/deeptools/deepTools/tree/develop) using the command `bamCoverage --bam filename.bam.sorted -o filename.bw --extendReads -bs 1 --normalizeUsing RPKM`. For more details regarding candidate peak selection and the deep neural network scoring please see the citation below. 
+Currently there are 3 LanceOtron modules available, all of which require a bigwig file to supply the model with coverage data. We recommend directly converting BAM files to bigwigs with [deepTools](https://github.com/deeptools/deepTools/tree/develop) using the command `bamCoverage --bam filename.bam.sorted -o filename.bw --extendReads -bs 1 --normalizeUsing RPKM`. By default the modules return a bed file of *all* candidate peaks, good, bad and otherwise, along with their associated scores. For more details regarding candidate peak selection and the deep neural network scoring please see the citation below. 
 
 Module | Operation | Files Used
 ------ | --------- | ----------
@@ -43,7 +43,7 @@ Score Peaks | Score user-supplied regions with neural network | bed file, bigwig
 
 ### Find and Score Peaks
 
-This module first finds candidate peaks using an algorithm taking 2 parameters: 1) threshold and 2) window; default parameters are recommended. Signal is extracted from the bigwig file for each candidate peak, then passed to LanceOtron's deep neural network. This returns a bed file of *all* candidate peaks, both good and bad, along with their associated scores.
+This module first finds candidate peaks using an algorithm taking 2 parameters: 1) threshold and 2) window; default parameters are recommended. Signal is extracted from the bigwig file for each candidate peak, then passed to LanceOtron's deep neural network.
 
 #### Basic Command
 
@@ -57,7 +57,44 @@ Flag | Description | Default
 -t, --threshold | Initial threshold used for candidate peak selection algorithm | 4
 -w, --window | Window size for rolling mean used for candidate peak selection algorithm | 400
 -f, --folder | Folder to write results to | current directory
---skipheader | Skip writing out header for results
+--skipheader | Skip writing out header for results | *none*
+
+### Find and Score Peaks with Input
+
+This module build on the **Find and Score Peaks** module, but additionally calculates the p-value of the enrichment of the experimental track above the control using the Poisson distribution.
+
+#### Basic Command
+
+>  `python find_and_score_peaks_with_input.py my_experiment.bw -i my_input_control.bw`
+
+#### Options
+
+Flag | Description | Default
+---- | ----------- | -------
+-i, --input | bigwig control input track | *none*
+-h, --help | Display arguments | *none*
+-t, --threshold | Initial threshold used for candidate peak selection algorithm | 4
+-w, --window | Window size for rolling mean used for candidate peak selection algorithm | 400
+-f, --folder | Folder to write results to | current directory
+--skipheader | Skip writing out header for results | *none*
+
+### Score Peaks
+
+Rather than finding candidate peaks based on enrichment from the bigwig coverage track, the user provides a bed file of regions to be scored by LanceOtron's deep neural network. 
+
+#### Basic Command
+
+>  `python score_peaks.py my_experiment.bw -b my_regions.bed`
+
+#### Options
+
+Flag | Description | Default
+---- | ----------- | -------
+-b, --bed |  bed file of regions to be scored using LanceOtron's neural network | *none* 
+-h, --help | Display arguments | *none*
+-f, --folder | Folder to write results to | current directory
+--skipheader | Skip writing out header for results | *none*
+
 
 ## Citation
 
