@@ -61,7 +61,7 @@ Flag | Description | Default
 
 ### Find and Score Peaks with Input
 
-This module build on the **Find and Score Peaks** module, but additionally calculates the p-value of the enrichment of the experimental track above the control using the Poisson distribution.
+This module build on the **Find and Score Peaks** module, but additionally calculates the enrichment p-value of the experimental track above the control using the Poisson distribution.
 
 #### Basic Command
 
