@@ -2,6 +2,7 @@
     <img src="LanceOtron_logo_shadow_dark.png" alt="LanceOtron logo">
 </p>
 
+-----------------------
 
 **LanceOtron** is a machine learning, genomic data extraction and analysis tool trained for ATAC-seq, ChIP-seq, and DNase-seq peak calling. A freely available and fully-featured webtool version, utilising the graphical user interface [MLV](https://mlv.molbiol.ox.ac.uk) and hosted at the [MRC WIMM Centre of Computational Biology, University of Oxford](https://www.imm.ox.ac.uk/research/units-and-centres/mrc-wimm-centre-for-computational-biology), can be found at [LanceOtron.molbiol.ox.ac.uk](https://lanceotron.molbiol.ox.ac.uk).
 
@@ -24,11 +25,21 @@ LanceOtron uses Python 3 (3.8.3) and TensorFlow 2. The models have been saved su
 
 ## Command Line Installation
 
-We recommend using a fresh virtual environment with Python 3.7+, and installing the required packages with pip.
+We recommend using a fresh virtual environment with Python 3.7+ (older versions of Python 3 may work, but are untested), and installing the required packages with pip.
 
 1. Clone/download repository
 1. pip install requirements
 > `pip install -r /path/to/repo/LanceOtron-master/requirements.txt`
+
+## Usage
+
+Currently there are 3 LanceOtron modules available, all of which require a bigwig file to supply the model with coverage data. 
+
+Module | Operation | Files Used
+------ | --------- | ----------
+Find and Score Peaks | Find enriched regions from coverage track, score regions with neural network | bigwig file
+Find and Score Peaks with Input | Find enriched regions from coverage track, score regions with neural network, calculate pvalues for enrichment over control | experimental bigwig file, input (control) bigwig file
+Score Peaks | Score user-supplied regions with neural network | bed file, bigwig file
 
 ## Citation
 
