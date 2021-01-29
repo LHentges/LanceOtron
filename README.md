@@ -33,7 +33,7 @@ We recommend using a fresh virtual environment with Python 3.7+ (older versions 
 
 ## Usage
 
-Currently there are 3 LanceOtron modules available, all of which require a bigwig file to supply the model with coverage data. We recommend directly converting BAM files to bigwigs with [deepTools](https://github.com/deeptools/deepTools/tree/develop) using the command `bamCoverage --bam filename.bam.sorted -o filename.bw --extendReads -bs 1 --normalizeUsing RPKM`. By default the modules return a bed file of *all candidate peaks, good, bad and otherwise*, along with their associated scores. For more details regarding candidate peak selection and the deep neural network scoring please see the citation below. 
+Currently there are 3 LanceOtron modules available, all of which require a bigwig file to supply the model with coverage data. We recommend directly converting BAM files to bigwigs with [deepTools](https://github.com/deeptools/deepTools/tree/develop) using the command `bamCoverage --bam filename.bam.sorted -o filename.bw --extendReads -bs 1 --normalizeUsing RPKM`. By default the modules return a bed file of **all candidate peaks, good, bad and otherwise**, along with their associated scores. For more details regarding candidate peak selection and the deep neural network scoring please see the citation below. 
 
 Module | Operation | Files Used
 ------ | --------- | ----------
