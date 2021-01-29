@@ -8,7 +8,7 @@
 
 ## Python Packages
 
-LanceOtron uses Python 3 (3.8.3) and TensorFlow 2. The models have been saved such that a TensorFlow 1 setup could be used making only minor amendments to the scripts. Additional packages were used for benchmarking LanceOtron (N.B. [bedtools](https://github.com/arq5x/bedtools2) needs to be installed to use the python implementation). See [requirements.txt](requirements.txt) for specific versions used. 
+LanceOtron was built using Python 3.8.3 and TensorFlow 2. The models have been saved such that a TensorFlow 1 setup could be used making only minor amendments to the scripts (see note in modules folder). Additional packages were used for benchmarking LanceOtron (N.B. [bedtools](https://github.com/arq5x/bedtools2) needs to be installed to use the python implementation). See [requirements.txt](requirements.txt) for specific versions used. 
 
 **Required Python Packages for LanceOtron:**
 > * scipy
@@ -33,7 +33,7 @@ We recommend using a fresh virtual environment with Python 3.7+ (older versions 
 
 ## Usage
 
-Currently there are 3 LanceOtron modules available, all of which require a bigwig file to supply the model with coverage data. We recommend directly converting BAM files to bigwigs with [deepTools](https://github.com/deeptools/deepTools/tree/develop) using the command `bamCoverage --bam filename.bam.sorted -o filename.bw --extendReads -bs 1 --normalizeUsing RPKM`.
+Currently there are 3 LanceOtron modules available, all of which require a bigwig file to supply the model with coverage data. We recommend directly converting BAM files to bigwigs with [deepTools](https://github.com/deeptools/deepTools/tree/develop) using the command `bamCoverage --bam filename.bam.sorted -o filename.bw --extendReads -bs 1 --normalizeUsing RPKM`. For more details regarding candidate peak selection and the deep neural network scoring please see the citation below. 
 
 Module | Operation | Files Used
 ------ | --------- | ----------
@@ -43,7 +43,21 @@ Score Peaks | Score user-supplied regions with neural network | bed file, bigwig
 
 ### Find and Score Peaks
 
+This module first finds candidate peaks using an algorithm taking 2 parameters: 1) threshold and 2) window; default parameters are recommended. Signal is extracted from the bigwig file for each candidate peak, then passed to LanceOtron's deep neural network. This returns a bed file of *all* candidate peaks, both good and bad, along with their associated scores.
 
+#### Basic Command
+
+>  `python find_and_score_peaks.py my_experiment.bw`
+
+#### Options
+
+Flag | Description | Default
+---- | ----------- | -------
+-h, --help | Display arguments | *none*
+-t, --threshold | Initial threshold used for candidate peak selection algorithm | 4
+-w, --window | Window size for rolling mean used for candidate peak selection algorithm | 400
+-f, --folder | Folder to write results to | current directory
+--skipheader | Skip writing out header for results
 
 ## Citation
 
