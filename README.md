@@ -8,7 +8,7 @@
 
 ## Python Packages
 
-LanceOtron was built using Python 3.8.3 and TensorFlow 2. The models have been saved such that a TensorFlow 1 setup could be used making only minor amendments to the scripts (see note in modules folder). Additional packages were used for benchmarking LanceOtron (N.B. [bedtools](https://github.com/arq5x/bedtools2) needs to be installed to use the python implementation). See [requirements.txt](requirements.txt) for specific versions used. 
+LanceOtron was built using Python 3.8.3 and TensorFlow 2. The models have been saved such that a TensorFlow 1 setup could be used making only minor amendments to the scripts (see note in modules folder). Additional packages were used for benchmarking LanceOtron - N.B. [bedtools](https://github.com/arq5x/bedtools2) needs to be installed to use *pybedtools*. See [requirements.txt](requirements.txt) for specific version numbers used. 
 
 **Required Python Packages for LanceOtron:**
 > * scipy
@@ -100,4 +100,4 @@ Flag | Description | Default
 
 Please see our [bioRxiv article](https://www.biorxiv.org/content/10.1101/2021.01.25.428108v1) for further details on this project.
 
-Hentges, L. D., Sergeant, M. J., Downes, D. J., Hughes, J. R., & Taylor, S. (2021). LanceOtron : a deep learning peak caller for ATAC-seq , ChIP-seq , and DNase-seq. *bioRxiv*. https://www.biorxiv.org/content/10.1101/2021.01.25.428108v1
+Hentges, L. D., Sergeant, M. J., Downes, D. J., Hughes, J. R., & Taylor, S. (2021). LanceOtron : a deep learning peak caller for ATAC-seq , ChIP-seq , and DNase-seq. *bioRxiv*.
