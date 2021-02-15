@@ -31,6 +31,8 @@ We recommend using a fresh virtual environment with Python 3.7+ (older versions 
 > `git clone https://github.com/LHentges/LanceOtron.git`
 2. pip install requirements
 > `pip install --user -r /path/to/repo/LanceOtron/requirements.txt`
+3. Run commands using your computer's Python interpreter (see next section for common use cases)
+> `python /path/to/repo/LanceOtron/modules/find_and_score_peaks.py /path/to/bigwig/my_experiment.bw`
 
 ## Usage
 
