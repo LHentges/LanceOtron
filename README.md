@@ -28,8 +28,9 @@ LanceOtron was built using Python 3.8.3 and TensorFlow 2. The models have been s
 We recommend using a fresh virtual environment with Python 3.7+ (older versions of Python 3 may work, but are untested), and installing the required packages with pip.
 
 1. Clone/download repository
+> `git clone https://github.com/LHentges/LanceOtron.git`
 1. pip install requirements
-> `pip install -r /path/to/repo/LanceOtron-master/requirements.txt`
+> `pip install --user -r /path/to/repo/LanceOtron/requirements.txt`
 
 ## Usage
 
