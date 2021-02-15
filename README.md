@@ -29,7 +29,7 @@ We recommend using a fresh virtual environment with Python 3.7+ (older versions 
 
 1. Clone/download repository
 > `git clone https://github.com/LHentges/LanceOtron.git`
-1. pip install requirements
+2. pip install requirements
 > `pip install --user -r /path/to/repo/LanceOtron/requirements.txt`
 
 ## Usage
