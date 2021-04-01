@@ -1,2 +1,0 @@
-0-LanceOtron_DNase-seq_open-chromatin_GM12878.bed
-1-MACS2_DNase-seq_open-chromatin_GM12878.narrowPeak
