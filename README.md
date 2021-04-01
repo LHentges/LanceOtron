@@ -115,6 +115,6 @@ Flag | Description | Default
 
 ## Citation
 
-Please see our [bioRxiv article](https://www.biorxiv.org/content/10.1101/2021.01.25.428108v1) for further details on this project.
+Please see our [bioRxiv article](https://www.biorxiv.org/content/10.1101/2021.01.25.428108v2) for further details on this project.
 
 Hentges, L. D., Sergeant, M. J., Downes, D. J., Hughes, J. R., & Taylor, S. (2021). LanceOtron : a deep learning peak caller for ATAC-seq , ChIP-seq , and DNase-seq. *bioRxiv*.
