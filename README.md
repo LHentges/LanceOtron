@@ -50,21 +50,23 @@ All LanceOtron modules require a bigwig file to supply the model with coverage d
 
 The options used in this command are important, as they affect the shape of peaks and therefore the neural network's assessment. Extending the reads out to the fragment length represents a more accurate picture of coverage (N.B for paired end sequencing the extension length is automatically determined, single end tracks will require the user to specify the `--extendReads` length), as does using a bin size of 1 (the `--bs` flag). We recommend RPKM normalisation, as this was also used for the training data.
 
+### Modules
+
 Module | Operation | Files Used
 ------ | --------- | ----------
 Find and Score Peaks | Find enriched regions from coverage track, score regions with neural network | bigwig file
 Find and Score Peaks with Input | Find enriched regions from coverage track, score regions with neural network, calculate pvalues for enrichment over control | experimental bigwig file, input (control) bigwig file
 Score Peaks | Score user-supplied regions with neural network | bed file, bigwig file
 
-### Find and Score Peaks
+#### Find and Score Peaks
 
 This module first finds candidate peaks using an algorithm taking 2 parameters: 1) threshold and 2) window; default parameters are recommended. Signal is extracted from the bigwig file for each candidate peak, then passed to LanceOtron's deep neural network.
 
-#### Basic Command
+##### Basic Command
 
 >  `python find_and_score_peaks.py my_experiment.bw`
 
-#### Options
+##### Options
 
 Flag | Description | Default
 ---- | ----------- | -------
@@ -74,15 +76,15 @@ Flag | Description | Default
 -f, --folder | Folder to write results to | current directory
 --skipheader | Skip writing out header for results | *none*
 
-### Find and Score Peaks with Input
+#### Find and Score Peaks with Input
 
 This module build on the **Find and Score Peaks** module, but additionally calculates the enrichment p-value of the experimental track above the control using the Poisson distribution.
 
-#### Basic Command
+##### Basic Command
 
 >  `python find_and_score_peaks_with_input.py my_experiment.bw -i my_input_control.bw`
 
-#### Options
+##### Options
 
 Flag | Description | Default
 ---- | ----------- | -------
@@ -93,15 +95,15 @@ Flag | Description | Default
 -f, --folder | Folder to write results to | current directory
 --skipheader | Skip writing out header for results | *none*
 
-### Score Peaks
+#### Score Peaks
 
 Rather than finding candidate peaks based on enrichment from the bigwig coverage track, the user provides a bed file of regions to be scored by LanceOtron's deep neural network. 
 
-#### Basic Command
+##### Basic Command
 
 >  `python score_peaks.py my_experiment.bw -b my_regions.bed`
 
-#### Options
+##### Options
 
 Flag | Description | Default
 ---- | ----------- | -------
