@@ -1,0 +1,18 @@
+DNase-seq_open-chromatin_GM12878
+
+DNase-seq_open-chromatin_GM12878
+
+0-LanceOtron
+--------------------------------------------------
+total peaks called: 25183
+peaks intersecting active regions: 2871
+% peaks intersecting TSSs: 11.40054798872255
+
+
+1-MACS2
+--------------------------------------------------
+total peaks called: 67461
+peaks intersecting active regions: 5285
+% peaks intersecting TSSs: 7.834156030891923
+
+

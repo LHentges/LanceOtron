@@ -1,0 +1,16 @@
+DNase-seq_open-chromatin_A549
+
+0-LanceOtron
+--------------------------------------------------
+total peaks called: 5000
+peaks overlapping TSSs: 2164
+% peaks intersecting TSSs: 43.28
+
+
+1-MACS2
+--------------------------------------------------
+total peaks called: 5000
+peaks overlapping TSSs: 1151
+% peaks intersecting TSSs: 23.02
+
+

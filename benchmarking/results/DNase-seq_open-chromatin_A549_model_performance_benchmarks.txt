@@ -2,27 +2,27 @@ DNase-seq_open-chromatin_A549
 
 0-LanceOtron
 --------------------------------------------------
-- true positives: 102
-- false negatives: 12
-- true negatives: 108
-- false positives: 2
+- true positives: 101
+- false negatives: 7
+- true negatives: 107
+- false positives: 3
 
-- precision: 0.9807692307692307
-- recall/sensitivity: 0.8947368421052632
-- specificity: 0.9818181818181818
-- F1 score: 0.9357798165137615
+- precision: 0.9711538461538461
+- recall/sensitivity: 0.9351851851851852
+- specificity: 0.9727272727272728
+- F1 score: 0.9528301886792453
 
 
 1-MACS2
 --------------------------------------------------
-- true positives: 111
-- false negatives: 3
-- true negatives: 73
-- false positives: 37
+- true positives: 106
+- false negatives: 2
+- true negatives: 75
+- false positives: 35
 
-- precision: 0.75
-- recall/sensitivity: 0.9736842105263158
-- specificity: 0.6636363636363637
-- F1 score: 0.8473282442748091
+- precision: 0.75177304964539
+- recall/sensitivity: 0.9814814814814815
+- specificity: 0.6818181818181818
+- F1 score: 0.8514056224899599
 
 

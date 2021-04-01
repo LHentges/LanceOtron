@@ -1,0 +1,2 @@
+0-LanceOtron_ATAC-seq_open-chromatin_MCF7_top-5k-peaks-normalised_to_1kb.bed
+1-MACS2_ATAC-seq_open-chromatin_MCF7_top-5k-peaks-normalised_to_1kb.bed

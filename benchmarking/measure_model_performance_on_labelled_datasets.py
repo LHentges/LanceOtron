@@ -58,7 +58,7 @@ for sample in sample_list:
             f.write('- F1 score: {}\n'.format(f1))
             f.write('\n\n')
     results_df = pd.DataFrame(data=results_dict)
-    results_df.plot.bar()
+    results_df.T.plot.bar(ylim=(0.6,1))
     plt.title(sample, color='black')
     plt.legend(loc='center left', bbox_to_anchor=(1.0, 0.5))
     plt.savefig(out_folder+sample+'_model_performance_benchmarks.png', bbox_inches='tight')

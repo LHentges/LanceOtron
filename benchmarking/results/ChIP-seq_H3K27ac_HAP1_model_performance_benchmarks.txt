@@ -2,53 +2,53 @@ ChIP-seq_H3K27ac_HAP1
 
 0-LanceOtron
 --------------------------------------------------
-- true positives: 45
-- false negatives: 0
-- true negatives: 56
-- false positives: 0
+- true positives: 53
+- false negatives: 1
+- true negatives: 51
+- false positives: 1
 
-- precision: 1.0
-- recall/sensitivity: 1.0
-- specificity: 1.0
-- F1 score: 1.0
+- precision: 0.9814814814814815
+- recall/sensitivity: 0.9814814814814815
+- specificity: 0.9807692307692307
+- F1 score: 0.9814814814814815
 
 
 1-MACS2
 --------------------------------------------------
-- true positives: 45
-- false negatives: 0
-- true negatives: 49
-- false positives: 7
+- true positives: 53
+- false negatives: 1
+- true negatives: 43
+- false positives: 9
 
-- precision: 0.8653846153846154
-- recall/sensitivity: 1.0
-- specificity: 0.875
-- F1 score: 0.9278350515463918
+- precision: 0.8548387096774194
+- recall/sensitivity: 0.9814814814814815
+- specificity: 0.8269230769230769
+- F1 score: 0.9137931034482759
 
 
 2-LanceOtron-with-input
 --------------------------------------------------
-- true positives: 45
-- false negatives: 0
-- true negatives: 56
-- false positives: 0
+- true positives: 53
+- false negatives: 1
+- true negatives: 51
+- false positives: 1
 
-- precision: 1.0
-- recall/sensitivity: 1.0
-- specificity: 1.0
-- F1 score: 1.0
+- precision: 0.9814814814814815
+- recall/sensitivity: 0.9814814814814815
+- specificity: 0.9807692307692307
+- F1 score: 0.9814814814814815
 
 
 3-MACS2-with-input
 --------------------------------------------------
-- true positives: 44
-- false negatives: 1
-- true negatives: 54
-- false positives: 2
+- true positives: 49
+- false negatives: 5
+- true negatives: 47
+- false positives: 5
 
-- precision: 0.9565217391304348
-- recall/sensitivity: 0.9777777777777777
-- specificity: 0.9642857142857143
-- F1 score: 0.967032967032967
+- precision: 0.9074074074074074
+- recall/sensitivity: 0.9074074074074074
+- specificity: 0.9038461538461539
+- F1 score: 0.9074074074074074
 
 
