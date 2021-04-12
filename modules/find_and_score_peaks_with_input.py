@@ -4,7 +4,7 @@
 # Hard coded for release model (wide_and_deep_fully_trained_v5_03) - need to have model weights and standard scaler values in same directory
 
 import LanceOtron as Ltron
-import os
+import os, sys
 import numpy as np
 import pyBigWig
 import pickle
@@ -15,6 +15,8 @@ import tensorflow.keras.backend as K
 from scipy.stats import poisson
 import csv
 import argparse
+
+os.chdir(sys.path[0])
 
 parser = argparse.ArgumentParser(description='Sort significantly enriched regions of ChIP-seq singnals using a CNN')
 parser.add_argument('file', help='bigwig file')
