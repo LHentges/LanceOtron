@@ -1,0 +1,17 @@
+site_name: LanceOTron
+site_description: Command line interface to the LanceOTron peak caller
+repo_url: "https://github.com/chris1221/lanceotron"
+repo_name: "Chris1221/lanceotron"
+
+nav:
+  - Overview: index.md
+  - Tutorials:
+    - Basic Peak Calling: genome_tutorial.md 
+  - API Documentation: api/modules.md 
+
+theme:
+  name: material
+
+plugins:
+  - search
+  - mkdocstrings

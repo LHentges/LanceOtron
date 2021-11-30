@@ -1,0 +1,17 @@
+pyBigWig
+sklearn # to avoid a warning
+joblib
+numpy
+pandas
+tensorflow>2
+scipy
+natsort
+tqdm
+
+# For documentation
+mkdocs
+mkdocs-material
+mkdocstrings
+
+# For coverage
+coverage

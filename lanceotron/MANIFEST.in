@@ -1,0 +1,4 @@
+include lanceotron/static/__init__.py
+include lanceotron/static/standard_scaler_deep_v5_03.p
+include lanceotron/static/standard_scaler_wide_v5_03.p
+include lanceotron/static/wide_and_deep_fully_trained_v5_03.h5

@@ -1,0 +1,35 @@
+version: 2.1
+
+orbs:
+  python: circleci/python@0.2.1
+  codecov: codecov/codecov@1.1.1
+  
+branches:
+  only:
+    - master
+
+jobs:
+  build-and-test:
+    executor: python/default
+    steps:
+      - checkout
+      - run:
+          command: pip install -r lanceotron/requirements.txt
+          name: Dependencies
+      - run:
+          command: pip install lanceotron
+          name: Install
+      - run:
+          command: cd lanceotron; coverage run -m unittest
+          name: Test 
+      - run:
+          command: cd lanceotron; coverage xml -i lanceotron/*
+          name: Create coverage report
+      - codecov/upload:
+          file: lanceotron/coverage.xml
+
+
+workflows:
+  main:
+    jobs:
+      - build-and-test
