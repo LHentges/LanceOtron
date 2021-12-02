@@ -13,6 +13,8 @@
 
 LanceOtron was built using Python 3.8.3 and TensorFlow 2. The models have been saved such that a TensorFlow 1 setup could be used making only minor amendments to the scripts (see note in modules folder). Additional packages were used for benchmarking LanceOtron - see [requirements.txt](lanceotron/requirements.txt) for specific version numbers used. 
 
+LanceOTron is currently tested on Linux and MacOSX, please see the CircleCI implementation for more information if interested. We do not currently support native Windows installations, nor do we have any immediate plans due to the amount of work involved to maintain it. Windows subsystem for Linux should function as expected, though if you have issues using LanceOTron on your specific installation, please [raise an issue](https://github.com/LHentges/LanceOtron/issues/new/choose) and we will help you resolve them. 
+
 **Additional Python Packages for Benchmarking:**
 
 N.B. [bedtools](https://github.com/arq5x/bedtools2) needs to be installed to use *pybedtools*.
