@@ -14,7 +14,7 @@ enhancer_annotation_bed_file = 'GenoSTAN_enhancers.bed'
 promoter_annotation_bed_file = 'GenoSTAN_promoters.bed'
 use_theme_colors = True
 
-colors_dict = {'2-LanceOtron-with-input':['darkgrey', '#C24D51'], '3-MACS2-with-input':['darkgrey', '#8172B2']}
+colors_dict = {'20-LanceOtron-with-input':['darkgrey', '#C24D51'], '30-MACS2-with-input':['darkgrey', '#8172B2']}
 
 sample_list = []
 for sample in os.listdir(sample_folder):
