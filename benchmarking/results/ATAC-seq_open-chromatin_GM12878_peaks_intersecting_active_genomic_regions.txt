@@ -1,32 +1,16 @@
 ATAC-seq_open-chromatin_GM12878
 
-0-LanceOtron
---------------------------------------------------
-total peaks called: 60962
-peaks intersecting active regions: 5590
-% peaks intersecting TSSs: 9.169646665135659
-
-
-1-MACS2
---------------------------------------------------
-total peaks called: 94197
-peaks intersecting active regions: 6679
-% peaks intersecting TSSs: 7.0904593564550895
-
-
-ATAC-seq_open-chromatin_GM12878
-
 00-LanceOtron
 --------------------------------------------------
 total peaks called: 60962
 peaks intersecting active regions: 5590
-% peaks intersecting TSSs: 9.169646665135659
+% peaks intersecting active regions: 9.169646665135659
 
 
 10-MACS2
 --------------------------------------------------
 total peaks called: 127304
 peaks intersecting active regions: 8368
-% peaks intersecting TSSs: 6.573242003393452
+% peaks intersecting active regions: 6.573242003393452
 
 
