@@ -1,1 +1,1 @@
-2-LanceOtron-with-input_ChIP-seq_CTCF_spleen.bed,3-MACS2-with-input_ChIP-seq_CTCF_spleen.narrowPeak
+20-LanceOtron-with-input_ChIP-seq_CTCF_spleen.bed,30-MACS2-with-input_ChIP-seq_CTCF_spleen.narrowPeak
