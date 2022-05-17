@@ -65,5 +65,5 @@ for sample in sample_list:
         else:
             ax.pie(data, wedgeprops=dict(width=0.5), startangle=90)
         ax.set_title(peak_caller)
-        plt.savefig(out_folder+sample+peak_caller+'_enhancer-promoter_pie.png', bbox_inches='tight')
+        plt.savefig(out_folder+sample+'_'+peak_caller+'_enhancer-promoter_pie.png', bbox_inches='tight')
 
