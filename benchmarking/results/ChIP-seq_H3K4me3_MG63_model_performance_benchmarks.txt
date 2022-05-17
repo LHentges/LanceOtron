@@ -1,6 +1,6 @@
 ChIP-seq_H3K4me3_MG63
 
-0-LanceOtron
+00-LanceOtron
 --------------------------------------------------
 - true positives: 124
 - false negatives: 1
@@ -13,20 +13,20 @@ ChIP-seq_H3K4me3_MG63
 - F1 score: 0.9802371541501976
 
 
-1-MACS2
+10-MACS2
 --------------------------------------------------
-- true positives: 115
-- false negatives: 10
-- true negatives: 83
-- false positives: 10
+- true positives: 117
+- false negatives: 8
+- true negatives: 77
+- false positives: 16
 
-- precision: 0.92
-- recall/sensitivity: 0.92
-- specificity: 0.8924731182795699
-- F1 score: 0.92
+- precision: 0.8796992481203008
+- recall/sensitivity: 0.936
+- specificity: 0.8279569892473119
+- F1 score: 0.9069767441860465
 
 
-2-LanceOtron-with-input
+20-LanceOtron-with-input
 --------------------------------------------------
 - true positives: 124
 - false negatives: 1
@@ -39,16 +39,16 @@ ChIP-seq_H3K4me3_MG63
 - F1 score: 0.992
 
 
-3-MACS2-with-input
+30-MACS2-with-input
 --------------------------------------------------
-- true positives: 122
-- false negatives: 3
-- true negatives: 89
-- false positives: 4
+- true positives: 123
+- false negatives: 2
+- true negatives: 86
+- false positives: 7
 
-- precision: 0.9682539682539683
-- recall/sensitivity: 0.976
-- specificity: 0.956989247311828
-- F1 score: 0.9721115537848606
+- precision: 0.9461538461538461
+- recall/sensitivity: 0.984
+- specificity: 0.9247311827956989
+- F1 score: 0.9647058823529412
 
 

@@ -1,6 +1,6 @@
 ChIP-seq_H3K27ac_HAP1
 
-0-LanceOtron
+00-LanceOtron
 --------------------------------------------------
 - true positives: 53
 - false negatives: 1
@@ -13,20 +13,20 @@ ChIP-seq_H3K27ac_HAP1
 - F1 score: 0.9814814814814815
 
 
-1-MACS2
+10-MACS2
 --------------------------------------------------
-- true positives: 53
-- false negatives: 1
-- true negatives: 43
-- false positives: 9
+- true positives: 54
+- false negatives: 0
+- true negatives: 34
+- false positives: 18
 
-- precision: 0.8548387096774194
-- recall/sensitivity: 0.9814814814814815
-- specificity: 0.8269230769230769
-- F1 score: 0.9137931034482759
+- precision: 0.75
+- recall/sensitivity: 1.0
+- specificity: 0.6538461538461539
+- F1 score: 0.8571428571428571
 
 
-2-LanceOtron-with-input
+20-LanceOtron-with-input
 --------------------------------------------------
 - true positives: 53
 - false negatives: 1
@@ -39,16 +39,16 @@ ChIP-seq_H3K27ac_HAP1
 - F1 score: 0.9814814814814815
 
 
-3-MACS2-with-input
+30-MACS2-with-input
 --------------------------------------------------
-- true positives: 49
-- false negatives: 5
-- true negatives: 47
-- false positives: 5
+- true positives: 51
+- false negatives: 3
+- true negatives: 44
+- false positives: 8
 
-- precision: 0.9074074074074074
-- recall/sensitivity: 0.9074074074074074
-- specificity: 0.9038461538461539
-- F1 score: 0.9074074074074074
+- precision: 0.864406779661017
+- recall/sensitivity: 0.9444444444444444
+- specificity: 0.8461538461538461
+- F1 score: 0.9026548672566371
 
 

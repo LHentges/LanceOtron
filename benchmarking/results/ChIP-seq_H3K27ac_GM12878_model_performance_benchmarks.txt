@@ -1,6 +1,6 @@
 ChIP-seq_H3K27ac_GM12878
 
-0-LanceOtron
+00-LanceOtron
 --------------------------------------------------
 - true positives: 74
 - false negatives: 3
@@ -13,16 +13,16 @@ ChIP-seq_H3K27ac_GM12878
 - F1 score: 0.9487179487179487
 
 
-1-MACS2
+10-MACS2
 --------------------------------------------------
 - true positives: 75
 - false negatives: 2
-- true negatives: 61
-- false positives: 12
+- true negatives: 58
+- false positives: 15
 
-- precision: 0.8620689655172413
+- precision: 0.8333333333333334
 - recall/sensitivity: 0.974025974025974
-- specificity: 0.8356164383561644
-- F1 score: 0.9146341463414634
+- specificity: 0.7945205479452054
+- F1 score: 0.8982035928143712
 
 
