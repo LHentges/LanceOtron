@@ -1,0 +1,12 @@
+20-LanceOtron-with-input_ChIP-seq_CTCF_spleen.bed
+--------------------------------------------------
+- total peaks called: 17398
+- intersecting peaks: 15928
+- exclusive peaks called: 1470
+
+
+30-MACS2-with-input_ChIP-seq_CTCF_spleen.narrowPeak
+--------------------------------------------------
+- total peaks called: 18390
+- intersecting peaks: 15925
+- exclusive peaks called: 2465
