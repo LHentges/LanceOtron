@@ -25,7 +25,7 @@ for sample in sample_list:
         
 active_regions_annotation_pybedtools = pybedtools.BedTool(sample_folder+active_regions_annotation_bed_file)
 for sample in sample_list:
-    with open(out_folder+sample+'_peaks_intersecting_active_genomic_regions.txt', 'a') as f:
+    with open(out_folder+sample+'_peaks_intersecting_active_genomic_regions.txt', 'w') as f:
         f.write(sample+'\n\n')
     for peak_call in sorted(sample_peak_calls_dict[sample]):
         peak_call_pybedtools = pybedtools.BedTool(peak_call)
@@ -36,5 +36,5 @@ for sample in sample_list:
             f.write('\n--------------------------------------------------\n')
             f.write('total peaks called: {}\n'.format(len(peak_call_pybedtools)))
             f.write('peaks intersecting active regions: {}\n'.format(len(peaks_intersecting_active_regions)))
-            f.write('% peaks intersecting TSSs: {}\n'.format(((len(peaks_intersecting_active_regions)/len(peak_call_pybedtools))*100)))
+            f.write('% peaks intersecting active regions: {}\n'.format(((len(peaks_intersecting_active_regions)/len(peak_call_pybedtools))*100)))
             f.write('\n\n')
