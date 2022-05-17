@@ -1,2 +1,28 @@
 ChIP-seq_CTCF_spleen
 
+20-LanceOtron-with-input
+--------------------------------------------------
+total peaks: 1470
+
+peaks intersecting enhancers: 976
+peaks not intersecting enhancers: 494
+peaks intersecting promoters: 1084
+peaks not intersecting promoters: 386
+
+peaks intersecting enhancers or promoters: 1320
+% peaks intersecting enhancers or promoters: 89.79591836734694
+
+
+30-MACS2-with-input
+--------------------------------------------------
+total peaks: 2465
+
+peaks intersecting enhancers: 1140
+peaks not intersecting enhancers: 1325
+peaks intersecting promoters: 321
+peaks not intersecting promoters: 2144
+
+peaks intersecting enhancers or promoters: 1200
+% peaks intersecting enhancers or promoters: 48.6815415821501
+
+
