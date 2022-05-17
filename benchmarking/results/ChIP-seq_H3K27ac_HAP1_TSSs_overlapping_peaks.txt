@@ -1,30 +1,30 @@
 ChIP-seq_H3K27ac_HAP1
 
-0-LanceOtron
+00-LanceOtron
 --------------------------------------------------
 total peaks called: 5000
 peaks overlapping TSSs: 2806
 % peaks intersecting TSSs: 56.120000000000005
 
 
-1-MACS2
+10-MACS2
 --------------------------------------------------
 total peaks called: 5000
-peaks overlapping TSSs: 2367
-% peaks intersecting TSSs: 47.339999999999996
+peaks overlapping TSSs: 2428
+% peaks intersecting TSSs: 48.559999999999995
 
 
-2-LanceOtron-with-input
+20-LanceOtron-with-input
 --------------------------------------------------
 total peaks called: 5000
 peaks overlapping TSSs: 2812
 % peaks intersecting TSSs: 56.24
 
 
-3-MACS2-with-input
+30-MACS2-with-input
 --------------------------------------------------
 total peaks called: 5000
-peaks overlapping TSSs: 2591
-% peaks intersecting TSSs: 51.82
+peaks overlapping TSSs: 2607
+% peaks intersecting TSSs: 52.14
 
 

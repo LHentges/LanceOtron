@@ -1,16 +1,16 @@
 ATAC-seq_open-chromatin_MCF7
 
-0-LanceOtron
+00-LanceOtron
 --------------------------------------------------
 total peaks called: 5000
 peaks overlapping TSSs: 2218
 % peaks intersecting TSSs: 44.36
 
 
-1-MACS2
+10-MACS2
 --------------------------------------------------
 total peaks called: 5000
-peaks overlapping TSSs: 1086
-% peaks intersecting TSSs: 21.72
+peaks overlapping TSSs: 1096
+% peaks intersecting TSSs: 21.92
 
 
