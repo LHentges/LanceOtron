@@ -1,0 +1,5 @@
+00-LanceOtron_ChIP-seq_H3K27ac_GM12878.bed
+01-LanceOtron-MACS2_ChIP-seq_H3K27ac_GM12878.bed
+10-MACS2_ChIP-seq_H3K27ac_GM12878.narrowPeak
+11-MACS2-strict_ChIP-seq_H3K27ac_GM12878.narrowPeak
+12-MACS2-broad_ChIP-seq_H3K27ac_GM12878.broadPeak

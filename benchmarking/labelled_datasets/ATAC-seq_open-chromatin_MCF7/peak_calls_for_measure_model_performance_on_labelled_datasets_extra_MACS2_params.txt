@@ -1,0 +1,5 @@
+00-LanceOtron_ATAC-seq_open-chromatin_MCF7.bed
+01-LanceOtron-MACS2_ATAC-seq_open-chromatin_MCF7.bed
+10-MACS2_ATAC-seq_open-chromatin_MCF7.narrowPeak
+11-MACS2-strict_ATAC-seq_open-chromatin_MCF7.narrowPeak
+12-MACS2-broad_ATAC-seq_open-chromatin_MCF7.broadPeak

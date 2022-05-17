@@ -1,2 +1,2 @@
-0-LanceOtron_ChIP-seq_H3K4me3_K562.bed
-1-MACS2_ChIP-seq_H3K4me3_K562.narrowPeak
+00-LanceOtron_ChIP-seq_H3K4me3_K562.bed
+10-MACS2_ChIP-seq_H3K4me3_K562.narrowPeak

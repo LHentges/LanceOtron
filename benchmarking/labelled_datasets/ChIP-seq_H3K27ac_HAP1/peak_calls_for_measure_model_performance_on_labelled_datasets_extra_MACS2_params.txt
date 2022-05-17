@@ -1,0 +1,10 @@
+00-LanceOtron_ChIP-seq_H3K27ac_HAP1.bed
+01-LanceOtron-MACS2_ChIP-seq_H3K27ac_HAP1.bed
+10-MACS2_ChIP-seq_H3K27ac_HAP1.narrowPeak
+11-MACS2-strict_ChIP-seq_H3K27ac_HAP1.narrowPeak
+12-MACS2-broad_ChIP-seq_H3K27ac_HAP1.broadPeak
+20-LanceOtron-with-input_ChIP-seq_H3K27ac_HAP1.bed
+21-LoTron-MACS2-with-input_ChIP-seq_H3K27ac_HAP1.bed
+30-MACS2-with-input_ChIP-seq_H3K27ac_HAP1.narrowPeak
+31-MACS2-with-input-strict_ChIP-seq_H3K27ac_HAP1.narrowPeak
+32-MACS2-broad-with-input_ChIP-seq_H3K27ac_HAP1.broadPeak

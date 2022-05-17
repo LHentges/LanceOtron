@@ -1,0 +1,5 @@
+00-LanceOtron_DNase-seq_open-chromatin_A549.bed
+01-LanceOtron-MACS2_DNase-seq_open-chromatin_A549.bed
+10-MACS2_DNase-seq_open-chromatin_A549.narrowPeak
+11-MACS2-strict_DNase-seq_open-chromatin_A549.narrowPeak
+12-MACS2-broad_DNase-seq_open-chromatin_A549.broadPeak

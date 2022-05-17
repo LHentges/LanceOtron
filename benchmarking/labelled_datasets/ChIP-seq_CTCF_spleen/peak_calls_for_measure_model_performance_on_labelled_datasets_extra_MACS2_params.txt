@@ -1,0 +1,10 @@
+00-LanceOtron_ChIP-seq_CTCF_spleen.bed
+01-LanceOtron-MACS2_ChIP-seq_CTCF_spleen.bed
+10-MACS2_ChIP-seq_CTCF_spleen.narrowPeak
+11-MACS2-strict_ChIP-seq_CTCF_spleen.narrowPeak
+12-MACS2-broad_ChIP-seq_CTCF_spleen.broadPeak
+20-LanceOtron-with-input_ChIP-seq_CTCF_spleen.bed
+21-LoTron-MACS2-with-input_ChIP-seq_CTCF_spleen.bed
+30-MACS2-with-input_ChIP-seq_CTCF_spleen.narrowPeak
+31-MACS2-with-input-strict_ChIP-seq_CTCF_spleen.narrowPeak
+32-MACS2-broad-with-input_ChIP-seq_CTCF_spleen.broadPeak
