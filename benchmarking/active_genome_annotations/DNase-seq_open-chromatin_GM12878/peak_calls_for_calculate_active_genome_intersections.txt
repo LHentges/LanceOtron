@@ -1,2 +1,4 @@
 00-LanceOtron_DNase-seq_open-chromatin_GM12878.bed
+00-LanceOtron_DNase-seq_open-chromatin_GM12878_top-5k-peaks-normalised_to_1kb.bed
 10-MACS2_DNase-seq_open-chromatin_GM12878.narrowPeak
+10-MACS2_DNase-seq_open-chromatin_GM12878_top-5k-peaks-normalised_to_1kb.bed

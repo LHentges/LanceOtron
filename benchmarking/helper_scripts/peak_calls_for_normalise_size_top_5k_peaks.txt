@@ -1,11 +1,15 @@
+00-LanceOtron_ATAC-seq_open-chromatin_GM12878.bed
 00-LanceOtron_ATAC-seq_open-chromatin_MCF7.bed
 00-LanceOtron_ChIP-seq_H3K27ac_HAP1.bed
 00-LanceOtron_ChIP-seq_H3K4me3_MG63.bed
 00-LanceOtron_DNase-seq_open-chromatin_A549.bed
+00-LanceOtron_DNase-seq_open-chromatin_GM12878.bed
+10-MACS2_ATAC-seq_open-chromatin_GM12878.narrowPeak
 10-MACS2_ATAC-seq_open-chromatin_MCF7.narrowPeak
 10-MACS2_ChIP-seq_H3K27ac_HAP1.narrowPeak
 10-MACS2_ChIP-seq_H3K4me3_MG63.narrowPeak
 10-MACS2_DNase-seq_open-chromatin_A549.narrowPeak
+10-MACS2_DNase-seq_open-chromatin_GM12878.narrowPeak
 20-LanceOtron-with-input_ChIP-seq_H3K27ac_HAP1.bed
 20-LanceOtron-with-input_ChIP-seq_H3K4me3_MG63.bed
 30-MACS2-with-input_ChIP-seq_H3K27ac_HAP1.narrowPeak

@@ -7,10 +7,24 @@ peaks intersecting active regions: 2871
 % peaks intersecting active regions: 11.40054798872255
 
 
+00-LanceOtron
+--------------------------------------------------
+total peaks called: 5000
+peaks intersecting active regions: 607
+% peaks intersecting active regions: 12.139999999999999
+
+
 10-MACS2
 --------------------------------------------------
 total peaks called: 85607
 peaks intersecting active regions: 6356
 % peaks intersecting active regions: 7.424626490824348
+
+
+10-MACS2
+--------------------------------------------------
+total peaks called: 5000
+peaks intersecting active regions: 477
+% peaks intersecting active regions: 9.54
 
 
