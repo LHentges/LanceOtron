@@ -15,7 +15,7 @@ LoT is an all-in-one peak caller that identifies peak regions from a coverage tr
 4. Run tests to ensure that everything is working.
 
 ```{sh}
-git clone git@github.com:Chris1221/lanceotron.git; cd lanceotron # Step 1
+git clone git@github.com:LHentges/lanceotron.git; cd lanceotron # Step 1
 pip install -r requirements.txt # Step 2
 pip install -e . # Step 3
 python -m unittest
@@ -72,4 +72,4 @@ lanceotron callPeaks test/chr22.bw -f output_folder
 
 ## Bug Reports and Improvement Suggestions
 
-Please [raise an issue](https://github.com/Chris1221/lanceotron/issues/new/choose) if there is anything you wish to ask or contribute. 
+Please [raise an issue](https://github.com/LHentges/lanceotron/issues/new/choose) if there is anything you wish to ask or contribute. 

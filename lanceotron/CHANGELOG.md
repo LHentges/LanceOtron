@@ -1,3 +1,3 @@
-# 1.0.4
+# 1.0.5
 
-- Fix a bug where directories are not recursively created if they are specified on the command line (Thanks @alsmith151 in #2)
+- Fix dependencies for anaconda packages
