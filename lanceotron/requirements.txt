@@ -1,5 +1,5 @@
 pyBigWig
-sklearn # to avoid a warning
+scikit-learn # to avoid a warning
 joblib
 numpy
 pandas

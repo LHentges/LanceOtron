@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
    name='lanceotron',
-   version='1.0.1',
+   version='1.0.2',
    python_requires='>3.6', 
    description='Command-line interface to the lanceotron deep learning peak caller',
    long_description=long_description,
@@ -15,8 +15,8 @@ setup(
       "Bug Tracker": "https://github.com/Chris1221/lanceotron/issues",
       "Source": "https://github.com/Chris1221/lanceotron",
    },
-   author='Chris Cole, Lance Hentges',
-   author_email='ccole@well.ox.ac.uk',
+   author='Chris Cole, Lance Hentges, Simone G. Riva',
+   author_email='simo.riva15@gmail.com',
    packages=['lanceotron', 'lanceotron.static'],  
    include_package_data=True,
    keywords="deep learning, peak calling, keras",
