@@ -12,7 +12,7 @@ setup(
    long_description_content_type="text/markdown",
    project_urls={
        "Bug Tracker": "https://github.com/LHentges/lanceotron/issues",
-       "Source": "https://github.com/LHentges/lanceotron",
+       "Source": "https://github.com/LHentges/lanceotron"},
    author='Chris Cole, Lance Hentges, Simone G. Riva',
    author_email='simo.riva15@gmail.com',
    packages=['lanceotron', 'lanceotron.static'],  
