@@ -22,7 +22,7 @@ setup(
    keywords="deep learning, peak calling, keras",
    install_requires = [
       "pyBigWig",
-      "sklearn",
+      "scikit-learn",
       "numpy",
       "pandas",
       "tensorflow>2",
