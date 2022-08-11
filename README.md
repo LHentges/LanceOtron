@@ -72,6 +72,19 @@ The options used in this command are important, as they affect the shape of peak
 
 ## Citation
 
-Please see our [bioRxiv article](https://www.biorxiv.org/content/10.1101/2021.01.25.428108v2) for further details on this project.
+Please see our [Bioinformatics article](https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/btac525/6648462) for further details on this project or if you use it in your own work.
 
-Hentges, L. D., Sergeant, M. J., Downes, D. J., Hughes, J. R., & Taylor, S. (2021). LanceOtron : a deep learning peak caller for ATAC-seq , ChIP-seq , and DNase-seq. *bioRxiv*.
+```bibtex
+@article{10.1093/bioinformatics/btac525,
+    author = {Hentges, Lance D and Sergeant, Martin J and Cole, Christopher B and Downes, Damien J and Hughes, Jim R and Taylor, Stephen},
+    title = "{LanceOtron: a deep learning peak caller for genome sequencing experiments}",
+    journal = {Bioinformatics},
+    year = {2022},
+    month = {07},
+    issn = {1367-4803},
+    doi = {10.1093/bioinformatics/btac525},
+    url = {https://doi.org/10.1093/bioinformatics/btac525},
+    note = {btac525},
+    eprint = {https://academic.oup.com/bioinformatics/advance-article-pdf/doi/10.1093/bioinformatics/btac525/45048211/btac525.pdf},
+}
+```
