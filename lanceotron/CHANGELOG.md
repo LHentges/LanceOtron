@@ -1,3 +1,3 @@
-# 1.0.5
+# 1.0.8
 
-- Fix dependencies for anaconda packages
+- Fix pybigwig dependency for anaconda packages
