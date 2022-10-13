@@ -6,7 +6,7 @@
 
 [![PyPI version](https://badge.fury.io/py/lanceotron.svg)](https://badge.fury.io/py/lanceotron) [![Downloads](https://pepy.tech/badge/lanceotron)](https://pepy.tech/project/lanceotron) [![CircleCI](https://circleci.com/gh/Chris1221/lanceotron/tree/main.svg?style=svg&circle-token=bf3f78a54437e63368f5b9dc1c536d7f32f32393)](https://circleci.com/gh/Chris1221/lanceotron/tree/main) [![codecov](https://codecov.io/gh/Chris1221/lanceotron/branch/main/graph/badge.svg?token=yhL3YI00UP)](https://codecov.io/gh/Chris1221/lanceotron)
 
-[![Conda version](http://anaconda.org/sgriva/lanceotron/badges/version.svg)](http://anaconda.org/sgriva/lanceotron/badges/version.svg) [![Downloads](http://anaconda.org/sgriva/lanceotron/badges/downloads.svg)](http://anaconda.org/sgriva/lanceotron/badges/downloads.svg)
+[![Conda version](http://anaconda.org/sgriva/lanceotron/badges/version.svg)](https://anaconda.org/sgriva/lanceotron) [![Downloads](http://anaconda.org/sgriva/lanceotron/badges/downloads.svg)](https://anaconda.org/sgriva/lanceotron)
 
 **LanceOtron** is a machine learning, genomic data extraction and analysis tool trained for ATAC-seq, ChIP-seq, and DNase-seq peak calling. A freely available and fully-featured webtool version, utilising the graphical user interface [MLV](https://mlv.molbiol.ox.ac.uk) and hosted at the [MRC WIMM Centre of Computational Biology, University of Oxford](https://www.imm.ox.ac.uk/research/units-and-centres/mrc-wimm-centre-for-computational-biology), can be found at [LanceOtron.molbiol.ox.ac.uk](https://lanceotron.molbiol.ox.ac.uk).
 
