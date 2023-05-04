@@ -325,8 +325,9 @@ def score_bed(
     bigwig_data = Ltron.Bigwig_data(bigwig_file)
     genome_stats_dict = bigwig_data.get_genome_info(include_special_chromosomes=True)
     bed_file_out = []
+    region_counter = 0
 
-    for chrom in chroms_in_bed:
+    for chrom in natsort.natsorted(chroms_in_bed):
         enriched_region_coord_list = []
         for bed_entry in bed_list:
             if bed_entry[0] == chrom:
@@ -359,6 +360,7 @@ def score_bed(
             model_classifications = model.predict(
                 [X_deep_array_norm, X_wide_array_norm], verbose=1
             )
+            max_array = np.argmax(X_deep_array, axis=1)
 
             import tensorflow.keras.backend as K
 
@@ -371,17 +373,20 @@ def score_bed(
                     model_classifications[0][i][0],
                     model_classifications[1][i][0],
                     model_classifications[2][i][0],
+                    max_array[i]+coord_pair[0],
+                    region_counter + i,
                 ]
                 X_wide_list = X_wide_array[i][:-1].tolist()
                 X_wide_list = [100.0 if x > 10 else x for x in X_wide_list]
                 out_list += X_wide_list
                 chrom_file_out.append(out_list)
             bed_file_out += chrom_file_out
+            region_counter += len(chrom_file_out)
 
     with open(out_folder + out_file_name, "w", newline="") as f:
         if not skipheader:
             f.write(
-                "chrom\tstart\tend\toverall_peak_score\tshape_score\tenrichment_score\tpvalue_chrom\tpvalue_10kb\tpvalue_20kb\tpvalue_30kb\tpvalue_40kb\tpvalue_50kb\tpvalue_60kb\tpvalue_70kb\tpvalue_80kb\tpvalue_90kb\tpvalue_100kb\n"
+                "chrom\tstart\tend\toverall_peak_score\tshape_score\tenrichment_score\tmax_coverage_position\tregion_id\tpvalue_chrom\tpvalue_10kb\tpvalue_20kb\tpvalue_30kb\tpvalue_40kb\tpvalue_50kb\tpvalue_60kb\tpvalue_70kb\tpvalue_80kb\tpvalue_90kb\tpvalue_100kb\n"
             )
         bed_writer = csv.writer(f, delimiter="\t")
         bed_writer.writerows(bed_file_out)
