@@ -5,6 +5,7 @@ import numpy as np
 import pyBigWig
 import pickle
 from sklearn.preprocessing import StandardScaler
+import natsort
 
 # import tensorflow as tf
 # from tensorflow import keras
@@ -50,8 +51,9 @@ def find_and_score_peaks(
     bigwig_data = Ltron.Bigwig_data(bigwig_file)
     genome_stats_dict = bigwig_data.get_genome_info()
     bed_file_out = []
+    region_counter = 0
 
-    for chrom in genome_stats_dict:
+    for chrom in natsort.natsorted(genome_stats_dict):
         coverage_array_smooth = bigwig_data.make_chrom_coverage_map(
             genome_stats_dict[chrom], smoothing=window
         )
@@ -92,6 +94,7 @@ def find_and_score_peaks(
             model_classifications = model.predict(
                 [X_deep_array_norm, X_wide_array_norm], verbose=1
             )
+            max_array = np.argmax(X_deep_array, axis=1)
 
             import tensorflow.keras.backend as K
 
@@ -105,12 +108,15 @@ def find_and_score_peaks(
                     model_classifications[0][i][0],
                     model_classifications[1][i][0],
                     model_classifications[2][i][0],
+                    max_array[i]+coord_pair[0],
+                    region_counter+i
                 ]
                 X_wide_list = X_wide_array[i][:-1].tolist()
                 X_wide_list = [100.0 if x > 10 else x for x in X_wide_list]
                 out_list += X_wide_list
                 chrom_file_out.append(out_list)
             bed_file_out += chrom_file_out
+            region_counter += len(chrom_file_out)
 
     output = pd.DataFrame(bed_file_out)
     output.columns = [
@@ -120,6 +126,8 @@ def find_and_score_peaks(
         "overall_peak_score",
         "shape_score",
         "enrichment_score",
+        "max_coverage_position",
+        "region_id",
         "pvalue_chrom",
         "pvalue_10kb",
         "pvalue_20kb",
