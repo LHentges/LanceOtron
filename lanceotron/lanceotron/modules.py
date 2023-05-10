@@ -5,6 +5,7 @@ import numpy as np
 import pyBigWig
 import pickle
 from sklearn.preprocessing import StandardScaler
+import natsort
 
 # import tensorflow as tf
 # from tensorflow import keras
@@ -50,8 +51,9 @@ def find_and_score_peaks(
     bigwig_data = Ltron.Bigwig_data(bigwig_file)
     genome_stats_dict = bigwig_data.get_genome_info()
     bed_file_out = []
+    region_counter = 0
 
-    for chrom in genome_stats_dict:
+    for chrom in natsort.natsorted(genome_stats_dict):
         coverage_array_smooth = bigwig_data.make_chrom_coverage_map(
             genome_stats_dict[chrom], smoothing=window
         )
@@ -92,6 +94,7 @@ def find_and_score_peaks(
             model_classifications = model.predict(
                 [X_deep_array_norm, X_wide_array_norm], verbose=1
             )
+            max_array = np.argmax(X_deep_array, axis=1)
 
             import tensorflow.keras.backend as K
 
@@ -105,12 +108,15 @@ def find_and_score_peaks(
                     model_classifications[0][i][0],
                     model_classifications[1][i][0],
                     model_classifications[2][i][0],
+                    max_array[i]+coord_pair[0],
+                    region_counter+i
                 ]
                 X_wide_list = X_wide_array[i][:-1].tolist()
                 X_wide_list = [100.0 if x > 10 else x for x in X_wide_list]
                 out_list += X_wide_list
                 chrom_file_out.append(out_list)
             bed_file_out += chrom_file_out
+            region_counter += len(chrom_file_out)
 
     output = pd.DataFrame(bed_file_out)
     output.columns = [
@@ -120,6 +126,8 @@ def find_and_score_peaks(
         "overall_peak_score",
         "shape_score",
         "enrichment_score",
+        "max_coverage_position",
+        "region_id",
         "pvalue_chrom",
         "pvalue_10kb",
         "pvalue_20kb",
@@ -191,8 +199,9 @@ def call_peaks_with_input(
     bigwig_data = Ltron.Bigwig_data(bigwig_file)
     genome_stats_dict = bigwig_data.get_genome_info()
     bed_file_out = []
+    region_counter = 0
 
-    for chrom in genome_stats_dict:
+    for chrom in natsort.natsorted(genome_stats_dict):
         coverage_array_smooth = bigwig_data.make_chrom_coverage_map(
             genome_stats_dict[chrom], smoothing=window
         )
@@ -237,6 +246,7 @@ def call_peaks_with_input(
             pyBigWig_input = pyBigWig.open(control_file)
             read_coverage_total_input = pyBigWig_input.header()["sumData"]
             read_coverage_rphm_input = read_coverage_total_input / read_coverage_factor
+            max_array = np.argmax(X_deep_array, axis=1)
 
             import tensorflow.keras.backend as K
 
@@ -263,6 +273,8 @@ def call_peaks_with_input(
                     model_classifications[1][i][0],
                     model_classifications[2][i][0],
                     pvalue_input,
+                    max_array[i]+coord_pair[0],
+                    i+region_counter
                 ]
                 X_wide_list = X_wide_array[i][:-1].tolist()
                 X_wide_list = [100.0 if x > 10 else x for x in X_wide_list]
@@ -270,11 +282,12 @@ def call_peaks_with_input(
                 chrom_file_out.append(out_list)
             pyBigWig_input.close()
             bed_file_out += chrom_file_out
+            region_counter += len(chrom_file_out)
 
     with open(out_folder + out_file_name, "w", newline="") as f:
         if not skipheader:
             f.write(
-                "chrom\tstart\tend\toverall_peak_score\tshape_score\tenrichment_score\tpvalue_input\tpvalue_chrom\tpvalue_10kb\tpvalue_20kb\tpvalue_30kb\tpvalue_40kb\tpvalue_50kb\tpvalue_60kb\tpvalue_70kb\tpvalue_80kb\tpvalue_90kb\tpvalue_100kb\n"
+                "chrom\tstart\tend\toverall_peak_score\tshape_score\tenrichment_score\tpvalue_input\tmax_coverage_position\tregion_id\tpvalue_chrom\tpvalue_10kb\tpvalue_20kb\tpvalue_30kb\tpvalue_40kb\tpvalue_50kb\tpvalue_60kb\tpvalue_70kb\tpvalue_80kb\tpvalue_90kb\tpvalue_100kb\n"
             )
         bed_writer = csv.writer(f, delimiter="\t")
         bed_writer.writerows(bed_file_out)
@@ -312,8 +325,9 @@ def score_bed(
     bigwig_data = Ltron.Bigwig_data(bigwig_file)
     genome_stats_dict = bigwig_data.get_genome_info(include_special_chromosomes=True)
     bed_file_out = []
+    region_counter = 0
 
-    for chrom in chroms_in_bed:
+    for chrom in natsort.natsorted(chroms_in_bed):
         enriched_region_coord_list = []
         for bed_entry in bed_list:
             if bed_entry[0] == chrom:
@@ -346,6 +360,7 @@ def score_bed(
             model_classifications = model.predict(
                 [X_deep_array_norm, X_wide_array_norm], verbose=1
             )
+            max_array = np.argmax(X_deep_array, axis=1)
 
             import tensorflow.keras.backend as K
 
@@ -358,17 +373,20 @@ def score_bed(
                     model_classifications[0][i][0],
                     model_classifications[1][i][0],
                     model_classifications[2][i][0],
+                    max_array[i]+coord_pair[0],
+                    region_counter + i,
                 ]
                 X_wide_list = X_wide_array[i][:-1].tolist()
                 X_wide_list = [100.0 if x > 10 else x for x in X_wide_list]
                 out_list += X_wide_list
                 chrom_file_out.append(out_list)
             bed_file_out += chrom_file_out
+            region_counter += len(chrom_file_out)
 
     with open(out_folder + out_file_name, "w", newline="") as f:
         if not skipheader:
             f.write(
-                "chrom\tstart\tend\toverall_peak_score\tshape_score\tenrichment_score\tpvalue_chrom\tpvalue_10kb\tpvalue_20kb\tpvalue_30kb\tpvalue_40kb\tpvalue_50kb\tpvalue_60kb\tpvalue_70kb\tpvalue_80kb\tpvalue_90kb\tpvalue_100kb\n"
+                "chrom\tstart\tend\toverall_peak_score\tshape_score\tenrichment_score\tmax_coverage_position\tregion_id\tpvalue_chrom\tpvalue_10kb\tpvalue_20kb\tpvalue_30kb\tpvalue_40kb\tpvalue_50kb\tpvalue_60kb\tpvalue_70kb\tpvalue_80kb\tpvalue_90kb\tpvalue_100kb\n"
             )
         bed_writer = csv.writer(f, delimiter="\t")
         bed_writer.writerows(bed_file_out)
