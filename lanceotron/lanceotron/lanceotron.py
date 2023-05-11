@@ -637,6 +637,15 @@ def extract_signal_single_dl_input2(
     return X
 
 
+def find_summits(coverage_array, enriched_region_coord_list):
+    summit_list = []
+    for region in enriched_region_coord_list:
+        region_array = coverage_array[region[0]:region[1]]
+        max_index = np.argmax(region_array)
+        summit_list.append(region[0] + max_index)
+    return summit_list
+
+
 class Bigwig_data:
     import pyBigWig
     import numpy as np

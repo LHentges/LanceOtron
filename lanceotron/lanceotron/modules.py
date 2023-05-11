@@ -94,7 +94,7 @@ def find_and_score_peaks(
             model_classifications = model.predict(
                 [X_deep_array_norm, X_wide_array_norm], verbose=1
             )
-            max_array = np.argmax(X_deep_array, axis=1)
+            max_array = Ltron.find_summits(coverage_array, enriched_region_coord_list)
 
             import tensorflow.keras.backend as K
 
@@ -246,7 +246,7 @@ def call_peaks_with_input(
             pyBigWig_input = pyBigWig.open(control_file)
             read_coverage_total_input = pyBigWig_input.header()["sumData"]
             read_coverage_rphm_input = read_coverage_total_input / read_coverage_factor
-            max_array = np.argmax(X_deep_array, axis=1)
+            max_array = Ltron.find_summits(coverage_array, enriched_region_coord_list)
 
             import tensorflow.keras.backend as K
 
@@ -360,7 +360,7 @@ def score_bed(
             model_classifications = model.predict(
                 [X_deep_array_norm, X_wide_array_norm], verbose=1
             )
-            max_array = np.argmax(X_deep_array, axis=1)
+            max_array = Ltron.find_summits(coverage_array, enriched_region_coord_list)
 
             import tensorflow.keras.backend as K
 
