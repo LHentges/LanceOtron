@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
    name='lanceotron',
-   version='1.2.3',
+   version='1.2.4',
    python_requires='>3.6', 
    description='Command-line interface to the lanceotron deep learning peak caller',
    long_description=long_description,
@@ -20,7 +20,7 @@ setup(
    keywords="deep learning, peak calling, keras",
    install_requires = [
       "pyBigWig",
-      "sklearn",
+      "scikit-klearn",
       "numpy",
       "pandas",
       "tensorflow>2",
