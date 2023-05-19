@@ -108,7 +108,7 @@ def find_and_score_peaks(
                     model_classifications[0][i][0],
                     model_classifications[1][i][0],
                     model_classifications[2][i][0],
-                    max_array[i]+coord_pair[0],
+                    max_array[i],
                     region_counter+i
                 ]
                 X_wide_list = X_wide_array[i][:-1].tolist()
@@ -273,7 +273,7 @@ def call_peaks_with_input(
                     model_classifications[1][i][0],
                     model_classifications[2][i][0],
                     pvalue_input,
-                    max_array[i]+coord_pair[0],
+                    max_array[i],
                     i+region_counter
                 ]
                 X_wide_list = X_wide_array[i][:-1].tolist()
@@ -373,7 +373,7 @@ def score_bed(
                     model_classifications[0][i][0],
                     model_classifications[1][i][0],
                     model_classifications[2][i][0],
-                    max_array[i]+coord_pair[0],
+                    max_array[i],
                     region_counter + i,
                 ]
                 X_wide_list = X_wide_array[i][:-1].tolist()
