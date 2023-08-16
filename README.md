@@ -4,11 +4,13 @@
 
 -----------------------
 
-[![PyPI version](https://badge.fury.io/py/lanceotron.svg)](https://badge.fury.io/py/lanceotron) [![Downloads](https://pepy.tech/badge/lanceotron)](https://pepy.tech/project/lanceotron) [![CircleCI](https://circleci.com/gh/Chris1221/lanceotron/tree/main.svg?style=shield)](https://circleci.com/gh/Chris1221/lanceotron/tree/main) [![codecov](https://codecov.io/gh/Chris1221/lanceotron/branch/main/graph/badge.svg?token=yhL3YI00UP)](https://codecov.io/gh/Chris1221/lanceotron)
+[![PyPI version](https://badge.fury.io/py/lanceotron.svg)](https://badge.fury.io/py/lanceotron) [![Downloads](https://static.pepy.tech/badge/lanceotron)](https://pepy.tech/project/lanceotron) [![CircleCI](https://circleci.com/gh/Chris1221/lanceotron/tree/main.svg?style=shield)](https://circleci.com/gh/Chris1221/lanceotron/tree/main) [![codecov](https://codecov.io/gh/Chris1221/lanceotron/branch/main/graph/badge.svg?token=yhL3YI00UP)](https://codecov.io/gh/Chris1221/lanceotron)
 
 [![Conda version](http://anaconda.org/sgriva/lanceotron/badges/version.svg)](https://anaconda.org/sgriva/lanceotron) [![Anaconda-Server Badge](https://anaconda.org/sgriva/lanceotron/badges/downloads.svg)](https://anaconda.org/sgriva/lanceotron)
 
 **LanceOtron** is a machine learning, genomic data extraction and analysis tool trained for ATAC-seq, ChIP-seq, and DNase-seq peak calling. A freely available and fully-featured webtool version, utilising the graphical user interface [MLV](https://mlv.molbiol.ox.ac.uk) and hosted at the [MRC WIMM Centre of Computational Biology, University of Oxford](https://www.imm.ox.ac.uk/research/units-and-centres/mrc-wimm-centre-for-computational-biology), can be found at LanceOtron.molbiol.ox.ac.uk.
+
+#### ** 16 August 2023 - Our new server is now running and we have begun data transfer. We should return to normal services soon - hopefully this week or early next week. Thank you for your patience with this process!
 
 #### ** 11 August 2023 - We are currently in the process of upgrading our server used to host the LanceOtron web tool. Unfortunately for the next few days we are unable to provide this service. This will not affect the availability of the command line tool or our support of LanceOtron generally. Apologies for the inconvenience.
 
