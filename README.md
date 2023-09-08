@@ -8,11 +8,9 @@
 
 [![Conda version](http://anaconda.org/sgriva/lanceotron/badges/version.svg)](https://anaconda.org/sgriva/lanceotron) [![Anaconda-Server Badge](https://anaconda.org/sgriva/lanceotron/badges/downloads.svg)](https://anaconda.org/sgriva/lanceotron)
 
-**LanceOtron** is a machine learning, genomic data extraction and analysis tool trained for ATAC-seq, ChIP-seq, and DNase-seq peak calling. A freely available and fully-featured webtool version, utilising the graphical user interface [MLV](https://mlv.molbiol.ox.ac.uk) and hosted at the [MRC WIMM Centre of Computational Biology, University of Oxford](https://www.imm.ox.ac.uk/research/units-and-centres/mrc-wimm-centre-for-computational-biology), can be found at LanceOtron.molbiol.ox.ac.uk.
+**LanceOtron** is a machine learning, genomic data extraction and analysis tool trained for ATAC-seq, ChIP-seq, and DNase-seq peak calling. A freely available and fully-featured webtool version, utilising the graphical user interface [MLV](https://mlv.molbiol.ox.ac.uk) and hosted at the [MRC WIMM Centre of Computational Biology, University of Oxford](https://www.imm.ox.ac.uk/research/units-and-centres/mrc-wimm-centre-for-computational-biology), can be found at [LanceOtron.molbiol.ox.ac.uk](https://lanceotron.molbiol.ox.ac.uk).
 
-#### ** 16 August 2023 - Our new server is now running and we have begun data transfer. We should return to normal services soon - hopefully this week or early next week. Thank you for your patience with this process!
-
-#### ** 11 August 2023 - We are currently in the process of upgrading our server used to host the LanceOtron web tool. Unfortunately for the next few days we are unable to provide this service. This will not affect the availability of the command line tool or our support of LanceOtron generally. Apologies for the inconvenience.
+#### ** LanceOtron has been sucessfully migrated to our new server! The bigwig tracks and images from the interactive demos are currently unavailable, but full functionality has been restored. During this process we have unified our code base been the web version and CLI - this should have no effect on LanceOtron's behaviour (please raise an issue if you observe something suggesting otherwise).  
 
 ## Python Package and Requirements
 
