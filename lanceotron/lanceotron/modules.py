@@ -118,40 +118,43 @@ def find_and_score_peaks(
             bed_file_out += chrom_file_out
             region_counter += len(chrom_file_out)
 
-    output = pd.DataFrame(bed_file_out)
-    output.columns = [
-        "chrom",
-        "start",
-        "end",
-        "overall_peak_score",
-        "shape_score",
-        "enrichment_score",
-        "max_coverage_position",
-        "region_id",
-        "pvalue_chrom",
-        "pvalue_10kb",
-        "pvalue_20kb",
-        "pvalue_30kb",
-        "pvalue_40kb",
-        "pvalue_50kb",
-        "pvalue_60kb",
-        "pvalue_70kb",
-        "pvalue_80kb",
-        "pvalue_90kb",
-        "pvalue_100kb",
-    ]
-    output_thresholded = output.loc[output["overall_peak_score"] > cutoff, :]
+    if bed_file_out:
+        output = pd.DataFrame(bed_file_out)
+        output.columns = [
+            "chrom",
+            "start",
+            "end",
+            "overall_peak_score",
+            "shape_score",
+            "enrichment_score",
+            "max_coverage_position",
+            "region_id",
+            "pvalue_chrom",
+            "pvalue_10kb",
+            "pvalue_20kb",
+            "pvalue_30kb",
+            "pvalue_40kb",
+            "pvalue_50kb",
+            "pvalue_60kb",
+            "pvalue_70kb",
+            "pvalue_80kb",
+            "pvalue_90kb",
+            "pvalue_100kb",
+        ]
+        output_thresholded = output.loc[output["overall_peak_score"] > cutoff, :]
 
-    if format.lower() == "web":
-        output_thresholded.to_csv(
-            f"{out_folder}{out_file_name}", header=not skipheader, index=False, sep="\t"
-        )
-    elif format.lower() == "bed":
-        output_thresholded.iloc[:, 0:3].to_csv(
-            f"{out_folder}{out_file_name}", header=not skipheader, index=False, sep="\t"
-        )
+        if format.lower() == "web":
+            output_thresholded.to_csv(
+                f"{out_folder}{out_file_name}", header=not skipheader, index=False, sep="\t"
+            )
+        elif format.lower() == "bed":
+            output_thresholded.iloc[:, 0:3].to_csv(
+                f"{out_folder}{out_file_name}", header=not skipheader, index=False, sep="\t"
+            )
+        else:
+            raise NotImplementedError
     else:
-        raise NotImplementedError
+        print(f"\nNo peaks found for bigwig file: {bigwig_file}\n")
 
     # with open(out_folder+out_file_name, 'w', newline='') as f:
     #    if not skipheader:
