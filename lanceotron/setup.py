@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
    name='lanceotron',
-   version='1.2.6',
+   version='1.2.7',
    python_requires='>=3.7', 
    description='Command-line interface to the lanceotron deep learning peak caller',
    long_description=long_description,
